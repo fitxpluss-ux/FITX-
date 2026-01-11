@@ -18,6 +18,7 @@
             min-height: 100vh;
             padding: 15px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -51,10 +52,10 @@
         /* ========== GERİ BUTONU ========== */
         .back-btn {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             padding: 10px 18px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             border: 2px solid rgba(218, 165, 32, 0.3);
             border-radius: 10px;
             color: #FFD700;
@@ -74,34 +75,41 @@
         /* ========== DİL SEÇİCİ ========== */
         .lang-selector {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
             display: flex;
-            gap: 8px;
-            z-index: 10;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 100;
         }
         
         .lang-btn {
-            padding: 6px 12px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 2px solid rgba(218, 165, 32, 0.3);
-            border-radius: 8px;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 12px;
-            font-weight: 600;
+            padding: 7px 12px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 2px solid rgba(218, 165, 32, 0.4);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
+            min-width: 48px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .lang-btn:hover {
             border-color: #FFD700;
             color: #FFD700;
+            transform: translateY(-2px);
         }
         
         .lang-btn.active {
             background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
             color: #000;
             border-color: #FFD700;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
         }
         
         /* ========== LOGO ========== */
@@ -109,11 +117,13 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 25px;
+            padding-right: 65px;
             border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+            position: relative;
         }
         
         .logo-section h1 {
-            font-size: 56px;
+            font-size: 58px;
             font-weight: 900;
             letter-spacing: 3px;
             margin-bottom: 10px;
@@ -143,7 +153,7 @@
         
         .logo-section p {
             color: #DAA520;
-            font-size: 14px;
+            font-size: 8.5px;
             letter-spacing: 1px;
             font-weight: 500;
         }
@@ -250,6 +260,17 @@
             box-shadow: 0 8px 25px rgba(234, 88, 12, 0.3);
         }
         
+        /* Üyelik - Altın */
+        .menu-btn.membership {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.15) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border-color: rgba(218, 165, 32, 0.4);
+        }
+        
+        .menu-btn.membership:hover {
+            border-color: #DAA520;
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
+        }
+        
         .menu-btn.instagram {
             background: linear-gradient(135deg, rgba(188, 24, 136, 0.15) 0%, rgba(220, 39, 67, 0.1) 100%);
             border-color: rgba(188, 24, 136, 0.4);
@@ -258,6 +279,26 @@
         .menu-btn.instagram:hover {
             border-color: #bc1888;
             box-shadow: 0 8px 25px rgba(188, 24, 136, 0.3);
+        }
+        
+        /* Membership - Altın/Yeşil */
+        .menu-btn.membership {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(52, 211, 153, 0.1) 100%);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .menu-btn.membership:hover {
+            border-color: #10b981;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .menu-btn.instagram svg {
+            transition: all 0.3s;
+        }
+        
+        .menu-btn.instagram:hover svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(188, 24, 136, 0.6));
         }
         
         /* ========== APP BUTONLARI ========== */
@@ -543,29 +584,289 @@
             font-style: italic;
         }
         
+        /* ========== ÜYELİK PAKETİ STİLLERİ ========== */
+        .membership-package {
+            background: linear-gradient(145deg, rgba(218, 165, 32, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 2px solid rgba(218, 165, 32, 0.4);
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+        }
+        
+        .package-header {
+            background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .package-header h2 {
+            color: #000;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        
+        .package-content {
+            padding: 25px 20px;
+        }
+        
+        .package-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            border-left: 4px solid #4ade80;
+        }
+        
+        .package-item.positive {
+            color: #4ade80;
+            border-left-color: #4ade80;
+        }
+        
+        .package-item.negative {
+            color: #ef4444;
+            border-left-color: #ef4444;
+        }
+        
+        .package-price {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 2px solid rgba(218, 165, 32, 0.3);
+        }
+        
+        .price-amount {
+            color: #FFD700;
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .price-note {
+            color: #DAA520;
+            font-size: 11px;
+            font-style: italic;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        /* ========== ÜYELİK PAKETLERİ ========== */
+        .membership-package {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(16, 185, 129, 0.4);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 10px;
+        }
+        
+        .package-header {
+            text-align: center;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .package-header h2 {
+            color: #000;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        
+        .package-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .package-item {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid #10b981;
+            padding: 14px 18px;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+            line-height: 1.4;
+        }
+        
+        .package-item:hover {
+            background: rgba(16, 185, 129, 0.1);
+            transform: translateX(5px);
+            border-left-color: #34d399;
+        }
+        
         /* ========== RESPONSIVE ========== */
+        /* ========== RESPONSIVE - MOBİL OPTİMİZE ========== */
         @media (max-width: 480px) {
-            body { padding: 10px; }
-            .container { padding: 25px 18px; }
-            .logo-section h1 { font-size: 48px; }
-            .menu-btn { padding: 18px 20px; gap: 15px; }
-            .menu-icon { font-size: 28px; min-width: 35px; }
-            .menu-title { font-size: 16px; }
-            .menu-desc { font-size: 12px; }
-            .app-buttons { gap: 10px; }
-            .app-btn { padding: 15px 12px; }
-            .app-logo { font-size: 24px; }
-            .app-label { font-size: 11px; }
-            .wifi-password-text { font-size: 28px; }
+            body { 
+                padding: 12px;
+                padding-top: 15px;
+            }
+            .container { 
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+            .logo-section { 
+                padding-right: 60px;
+                margin-bottom: 35px;
+            }
+            .logo-section h1 { 
+                font-size: 48px;
+                letter-spacing: 2px;
+            }
+            .logo-section p { 
+                font-size: 7.5px;
+                margin-top: 5px;
+            }
+            .lang-selector { 
+                right: -5px;
+                gap: 5px;
+            }
+            .lang-btn { 
+                padding: 6px 10px; 
+                font-size: 10px;
+                min-width: 42px;
+                border-radius: 8px;
+            }
+            .menu-btn { 
+                padding: 20px 22px;
+                gap: 16px;
+                border-radius: 16px;
+            }
+            .menu-icon { 
+                font-size: 30px;
+                min-width: 38px;
+            }
+            .menu-title { 
+                font-size: 17px;
+            }
+            .menu-desc { 
+                font-size: 13px;
+            }
+            .app-buttons { 
+                gap: 12px;
+                margin-top: 25px;
+            }
+            .app-btn { 
+                padding: 16px 14px;
+            }
+            .app-logo { 
+                font-size: 26px;
+            }
+            .app-label { 
+                font-size: 12px;
+            }
+            .wifi-password-text { 
+                font-size: 30px;
+            }
+            /* Üyelik paketi mobil */
+            .package-header h2 {
+                font-size: 20px;
+            }
+            .package-item {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            .price-amount {
+                font-size: 32px;
+            }
+            .price-note {
+                font-size: 10px;
+            }
+            /* Form alanları mobil optimize */
+            input[type="text"], 
+            input[type="tel"], 
+            textarea, 
+            select {
+                font-size: 16px;
+                padding: 14px 16px;
+            }
+            .submit-btn {
+                padding: 16px;
+                font-size: 17px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            body { 
+                padding: 10px;
+            }
+            .container { 
+                padding: 25px 16px;
+            }
+            .logo-section { 
+                padding-right: 55px;
+                margin-bottom: 30px;
+            }
+            .logo-section h1 { 
+                font-size: 42px;
+                letter-spacing: 1.5px;
+            }
+            .logo-section p { 
+                font-size: 7px;
+            }
+            .lang-selector { 
+                right: -8px;
+                gap: 4px;
+            }
+            .lang-btn { 
+                padding: 5px 9px;
+                font-size: 9px;
+                min-width: 38px;
+            }
+            .menu-btn { 
+                padding: 18px 18px;
+            }
+            .menu-title { 
+                font-size: 15px;
+            }
+            .menu-desc { 
+                font-size: 12px;
+            }
         }
         
         @media (max-width: 350px) {
-            .logo-section h1 { font-size: 40px; }
-            .menu-btn { flex-direction: column; text-align: center; gap: 10px; }
-            .menu-arrow { display: none; }
-            .app-buttons { flex-direction: column; }
-            .radio-group { flex-direction: column; gap: 8px; }
-            .radio-option { width: 100%; }
+            .logo-section h1 { 
+                font-size: 38px;
+            }
+            .logo-section p { 
+                font-size: 6.5px;
+            }
+            .lang-btn { 
+                padding: 4px 8px;
+                font-size: 8.5px;
+                min-width: 36px;
+            }
+            .menu-btn { 
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 16px;
+            }
+            .menu-arrow { 
+                display: none;
+            }
+            .app-buttons { 
+                flex-direction: column;
+            }
+            .radio-group { 
+                flex-direction: column;
+                gap: 8px;
+            }
+            .radio-option { 
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -576,16 +877,16 @@
             ← Geri
         </button>
         
-        <!-- Dil Seçici -->
-        <div class="lang-selector">
-            <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
-            <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
-            <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
-        </div>
-        
         <!-- ========== ANA MENÜ SAYFASI ========== -->
         <div id="homePage" class="page active">
             <div class="logo-section">
+                <!-- Dil Seçici - FITX Yanında -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
+                    <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
+                </div>
+                
                 <h1><span class="fit">FIT</span><span class="x">X</span></h1>
                 <p id="subtitle">Hoş Geldiniz</p>
             </div>
@@ -609,8 +910,21 @@
                     <div class="menu-arrow">→</div>
                 </div>
 
+                <div onclick="openMembershipPage()" class="menu-btn membership">
+                    <div class="menu-icon">💎</div>
+                    <div class="menu-content">
+                        <div class="menu-title" id="menuMembership">Üyelik Paketlerimiz</div>
+                        <div class="menu-desc" id="menuMembershipDesc">Tüm paketleri görüntüleyin</div>
+                    </div>
+                    <div class="menu-arrow">→</div>
+                </div>
+
                 <a href="https://www.instagram.com/fitx.plus?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="menu-btn instagram">
-                    <div class="menu-icon">📸</div>
+                    <div class="menu-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" style="color: #bc1888;">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
                     <div class="menu-content">
                         <div class="menu-title" id="menuInstagram">Instagram</div>
                         <div class="menu-desc" id="menuInstagramDesc">Bizi sosyal medyada takip edin</div>
@@ -635,112 +949,346 @@
         <!-- ========== GERİ BİLDİRİM FORMU SAYFASI ========== -->
         <div id="feedbackPage" class="page">
             <div class="logo-section">
+                <!-- Dil Seçici - FITX Yanında -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
+                    <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
+                </div>
+                
                 <h1><span class="fit">FIT</span><span class="x">X</span></h1>
-                <p>Geri Bildirim Formu</p>
+                <p id="feedbackPageTitle">Geri Bildirim Formu</p>
             </div>
 
             <form id="feedbackForm">
                 <div class="form-group">
-                    <label>Mesaj Türü <span class="required">*</span></label>
+                    <label id="feedbackLabelType">Mesaj Türü <span class="required">*</span></label>
                     <div class="radio-group">
                         <div class="radio-option">
                             <input type="radio" id="complaint" name="type" value="Şikayet" checked>
-                            <label for="complaint">Şikayet</label>
+                            <label for="complaint" id="feedbackComplaint">Şikayet</label>
                         </div>
                         <div class="radio-option">
                             <input type="radio" id="suggestion" name="type" value="Öneri">
-                            <label for="suggestion">Öneri</label>
+                            <label for="suggestion" id="feedbackSuggestion">Öneri</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="name">Adınız Soyadınız <span class="required">*</span></label>
+                    <label for="name" id="feedbackLabelName">Adınız Soyadınız <span class="required">*</span></label>
                     <input type="text" id="name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Telefon Numaranız <span class="required">*</span></label>
+                    <label for="phone" id="feedbackLabelPhone">Telefon Numaranız <span class="required">*</span></label>
                     <input type="tel" id="phone" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="category">Kategori <span class="required">*</span></label>
+                    <label for="category" id="feedbackLabelCategory">Kategori <span class="required">*</span></label>
                     <select id="category" required>
-                        <option value="">Seçiniz...</option>
-                        <option value="Ekipman Kalitesi">Ekipman Kalitesi</option>
-                        <option value="Temizlik ve Hijyen">Temizlik ve Hijyen</option>
-                        <option value="Personel Hizmeti">Personel Hizmeti</option>
-                        <option value="Soyunma Odaları">Soyunma Odaları</option>
-                        <option value="Grup Dersleri">Grup Dersleri</option>
-                        <option value="Kişisel Antrenman">Kişisel Antrenman</option>
-                        <option value="Üyelik İşlemleri">Üyelik İşlemleri</option>
-                        <option value="Fiyatlandırma">Fiyatlandırma</option>
-                        <option value="Diğer">Diğer</option>
+                        <option value="" id="feedbackSelectCategory">Seçiniz...</option>
+                        <option value="Ekipman Kalitesi" id="feedbackOptCat1">Ekipman Kalitesi</option>
+                        <option value="Temizlik ve Hijyen" id="feedbackOptCat2">Temizlik ve Hijyen</option>
+                        <option value="Personel Hizmeti" id="feedbackOptCat3">Personel Hizmeti</option>
+                        <option value="Soyunma Odaları" id="feedbackOptCat4">Soyunma Odaları</option>
+                        <option value="Grup Dersleri" id="feedbackOptCat5">Grup Dersleri</option>
+                        <option value="Kişisel Antrenman" id="feedbackOptCat6">Kişisel Antrenman</option>
+                        <option value="Üyelik İşlemleri" id="feedbackOptCat7">Üyelik İşlemleri</option>
+                        <option value="Fiyatlandırma" id="feedbackOptCat8">Fiyatlandırma</option>
+                        <option value="Diğer" id="feedbackOptCat9">Diğer</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Mesajınız <span class="required">*</span></label>
+                    <label for="message" id="feedbackLabelMessage">Mesajınız <span class="required">*</span></label>
                     <textarea id="message" required maxlength="1000"></textarea>
                     <div class="char-count"><span id="charCount">0</span> / 1000</div>
                 </div>
 
-                <button type="submit" class="submit-btn">GÖNDER</button>
+                <button type="submit" class="submit-btn" id="feedbackSubmitBtn">GÖNDER</button>
             </form>
 
             <div class="loading" id="loading">
                 <div class="spinner"></div>
-                <p>Gönderiliyor...</p>
+                <p id="feedbackLoadingText">Gönderiliyor...</p>
             </div>
 
             <div class="success-message" id="successMessage">
                 <div style="font-size: 40px; margin-bottom: 12px;">✓</div>
-                <p style="font-weight: 600; margin-bottom: 8px;">Teşekkür Ederiz!</p>
-                <p style="font-size: 13px;">Mesajınız başarıyla iletildi.</p>
+                <p style="font-weight: 600; margin-bottom: 8px;" id="feedbackSuccessTitle">Teşekkür Ederiz!</p>
+                <p style="font-size: 13px;" id="feedbackSuccessMsg">Mesajınız başarıyla iletildi.</p>
             </div>
 
             <div class="error-message" id="errorMessage">
-                <p>✗ Bir hata oluştu. Lütfen tekrar deneyin.</p>
+                <p id="feedbackErrorMsg">✗ Bir hata oluştu. Lütfen tekrar deneyin.</p>
             </div>
         </div>
 
         <!-- ========== WiFi SAYFASI ========== -->
         <div id="wifiPage" class="page">
             <div class="logo-section">
+                <!-- Dil Seçici - FITX Yanında -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
+                    <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
+                </div>
+                
                 <h1><span class="fit">FIT</span><span class="x">X</span></h1>
-                <p>WiFi Şifre Talebi</p>
+                <p id="wifiPageTitle">WiFi Şifre Talebi</p>
             </div>
 
             <form id="wifiForm">
                 <div class="form-group">
-                    <label for="wifiName">Adınız Soyadınız <span class="required">*</span></label>
+                    <label for="wifiName" id="wifiLabelName">Adınız Soyadınız <span class="required">*</span></label>
                     <input type="text" id="wifiName" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="wifiPhone">Telefon Numaranız <span class="required">*</span></label>
+                    <label for="wifiPhone" id="wifiLabelPhone">Telefon Numaranız <span class="required">*</span></label>
                     <input type="tel" id="wifiPhone" required>
                 </div>
 
-                <button type="submit" class="submit-btn">ŞİFREYİ GÖSTER</button>
+                <button type="submit" class="submit-btn" id="wifiSubmitBtn">ŞİFREYİ GÖSTER</button>
             </form>
 
             <div class="loading" id="wifiLoading">
                 <div class="spinner"></div>
-                <p>İşleniyor...</p>
+                <p id="wifiLoadingText">İşleniyor...</p>
             </div>
 
             <div class="wifi-display" id="wifiDisplay" style="display: none;">
-                <h2>📶 WIFI ŞİFRESİ</h2>
+                <h2 id="wifiPasswordTitle">📶 WIFI ŞİFRESİ</h2>
                 <div class="wifi-password-box">
                     <div class="wifi-password-text">FITX2727.!</div>
-                    <div class="wifi-note">"TÜM KARAKTERLER BÜYÜK YAZILACAKTIR"</div>
+                    <div class="wifi-note" id="wifiNoteText">"TÜM KARAKTERLER BÜYÜK YAZILACAKTIR"</div>
                 </div>
             </div>
 
             <div class="error-message" id="wifiErrorMessage">
-                <p>✗ Bir hata oluştu. Lütfen tekrar deneyin.</p>
+                <p id="wifiErrorText">✗ Bir hata oluştu. Lütfen tekrar deneyin.</p>
+            </div>
+        </div>
+
+        <!-- ========== ÜYELİK PAKETLERİ SAYFASI ========== -->
+        <div id="membershipPage" class="page">
+            <div class="logo-section">
+                <!-- Dil Seçici - FITX Yanında -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
+                    <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
+                </div>
+                
+                <h1><span class="fit">FIT</span><span class="x">X</span></h1>
+                <p id="membershipPageTitle">Üyelik Paketlerimiz</p>
+            </div>
+
+            <!-- Aylık Paketler -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <!-- 1 Aylık Paket -->
+                <div class="membership-package">
+                    <div class="package-badge" style="background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%); color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-block; margin-bottom: 15px;" data-translate="monthlyPackage1">1 AYLIK ÜYELİK</div>
+                    <div class="package-title" style="font-size: 20px; font-weight: 800; color: #FFD700; margin-bottom: 15px; text-align: center;" data-translate="ourOfferings">SUNDUKLARIMIZ:</div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ SPİNNİNG DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ MAT PİLATES DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ CRUNCH DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> DONDURMA HAKKI YOKTUR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> SINIRSIZ ANTRENMAN SAATİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ALANINDA UZMAN EĞİTMENLER...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> PROFESYONEL EKİPMANLAR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÖZEL GİYİNME KABİNLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> TEMİZ VE HİJYENİK ORTAM...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ Wi-Fi İMKANI...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÇEŞİTLİ KARDİYO MAKİNELERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> İADE VE DEVİR YAPILMAMAKTADIR...</li>
+                    </ul>
+                    <div class="package-price" style="text-align: center; padding-top: 15px; border-top: 2px solid rgba(218, 165, 32, 0.3);">
+                        <div style="font-size: 32px; font-weight: 900; color: #FFD700; margin-bottom: 8px;">3.300 TL</div>
+                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.5); font-style: italic;"><span data-translate="priceNote">*SEÇKİN BİR TOPLULUĞUN GİRİŞ BİLETİ...</span></div>
+                    </div>
+                </div>
+
+                <!-- 3 Aylık Paket -->
+                <div class="membership-package">
+                    <div class="package-badge" style="background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%); color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-block; margin-bottom: 15px;" data-translate="monthlyPackage3">3 AYLIK ÜYELİK</div>
+                    <div class="package-title" style="font-size: 20px; font-weight: 800; color: #FFD700; margin-bottom: 15px; text-align: center;" data-translate="ourOfferings">SUNDUKLARIMIZ:</div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ SPİNNİNG DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ MAT PİLATES DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ CRUNCH DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature4_3m">15 GÜN DONDURMA HAKKI...</span></li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> SINIRSIZ ANTRENMAN SAATİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ALANINDA UZMAN EĞİTMENLER...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> PROFESYONEL EKİPMANLAR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÖZEL GİYİNME KABİNLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> TEMİZ VE HİJYENİK ORTAM...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ Wi-Fi İMKANI...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÇEŞİTLİ KARDİYO MAKİNELERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> İADE VE DEVİR YAPILMAMAKTADIR...</li>
+                    </ul>
+                    <div class="package-price" style="text-align: center; padding-top: 15px; border-top: 2px solid rgba(218, 165, 32, 0.3);">
+                        <div style="font-size: 32px; font-weight: 900; color: #FFD700; margin-bottom: 8px;">8.500 TL</div>
+                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.5); font-style: italic;"><span data-translate="priceNote">*SEÇKİN BİR TOPLULUĞUN GİRİŞ BİLETİ...</span></div>
+                    </div>
+                </div>
+
+                <!-- 6 Aylık Paket -->
+                <div class="membership-package">
+                    <div class="package-badge" style="background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%); color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-block; margin-bottom: 15px;" data-translate="monthlyPackage6">6 AYLIK ÜYELİK</div>
+                    <div class="package-title" style="font-size: 20px; font-weight: 800; color: #FFD700; margin-bottom: 15px; text-align: center;" data-translate="ourOfferings">SUNDUKLARIMIZ:</div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature_extra6m">15 GÜN EXTRA ÜYELİK...</span></li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ SPİNNİNG DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ MAT PİLATES DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ CRUNCH DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature4_6m">30 GÜN DONDURMA HAKKI...</span></li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> SINIRSIZ ANTRENMAN SAATİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ALANINDA UZMAN EĞİTMENLER...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> PROFESYONEL EKİPMANLAR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÖZEL GİYİNME KABİNLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> TEMİZ VE HİJYENİK ORTAM...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ Wi-Fi İMKANI...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÇEŞİTLİ KARDİYO MAKİNELERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> İADE YAPILMAMAKTADIR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature13_6m">1 DEFA DEVİR HAKKI VARDIR...</span></li>
+                    </ul>
+                    <div class="package-price" style="text-align: center; padding-top: 15px; border-top: 2px solid rgba(218, 165, 32, 0.3);">
+                        <div style="font-size: 32px; font-weight: 900; color: #FFD700; margin-bottom: 8px;">15.500 TL</div>
+                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.5); font-style: italic;"><span data-translate="priceNote">*SEÇKİN BİR TOPLULUĞUN GİRİŞ BİLETİ...</span></div>
+                    </div>
+                </div>
+
+                <!-- 1 Yıllık Paket -->
+                <div class="membership-package">
+                    <div class="package-badge" style="background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%); color: #000; padding: 8px 16px; border-radius: 10px; font-weight: 700; font-size: 13px; display: inline-block; margin-bottom: 15px;" data-translate="monthlyPackage12">1 YILLIK ÜYELİK</div>
+                    <div class="package-title" style="font-size: 20px; font-weight: 800; color: #FFD700; margin-bottom: 15px; text-align: center;" data-translate="ourOfferings">SUNDUKLARIMIZ:</div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature_extra12m">30 GÜN EXTRA ÜYELİK...</span></li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ SPİNNİNG DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ MAT PİLATES DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ CRUNCH DERSLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> DONDURMA HAKKI YOKTUR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> SINIRSIZ ANTRENMAN SAATİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ALANINDA UZMAN EĞİTMENLER...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> PROFESYONEL EKİPMANLAR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÖZEL GİYİNME KABİNLERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> TEMİZ VE HİJYENİK ORTAM...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÜCRETSİZ Wi-Fi İMKANI...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> ÇEŞİTLİ KARDİYO MAKİNELERİ...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> İADE YAPILMAMAKTADIR...</li>
+                        <li style="padding: 6px 0; font-size: 12px; display: flex; align-items: flex-start; gap: 8px; color: #ffffff;"><span style="color: #FFD700; font-weight: 900;">✓</span> <span data-translate="feature13_6m">1 DEFA DEVİR HAKKI VARDIR...</span></li>
+                    </ul>
+                    <div class="package-price" style="text-align: center; padding-top: 15px; border-top: 2px solid rgba(218, 165, 32, 0.3);">
+                        <div style="font-size: 32px; font-weight: 900; color: #FFD700; margin-bottom: 8px;">27.500 TL</div>
+                        <div style="font-size: 10px; color: rgba(255, 255, 255, 0.5); font-style: italic;"><span data-translate="priceNote">*SEÇKİN BİR TOPLULUĞUN GİRİŞ BİLETİ...</span></div>
+                    </div>
+                </div>
+
+                <!-- Not -->
+                <div style="background: rgba(255, 140, 0, 0.1); border: 2px solid rgba(255, 140, 0, 0.3); border-radius: 12px; padding: 15px 20px; margin: 20px 0; text-align: center;">
+                    <p style="color: #FF8C00; font-size: 12px; font-weight: 700; margin-bottom: 8px;">NOT: ÜYELİK İŞLEMLERİNDE</p>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 11px;">İŞ BANKASI VE ZİRAAT BANKASI KREDİ KARTLARINA 6 TAKSİTE KADAR TAKSİT İMKANIMIZ MEVCUTTUR...</p>
+                </div>
+
+                <!-- Özel Dersler -->
+                <div style="background: linear-gradient(145deg, #2a1a0a 0%, #3a2a1a 100%); border: 2px solid rgba(255, 140, 0, 0.4); border-radius: 15px; padding: 20px; margin-top: 10px;">
+                    <h3 style="color: #FF8C00; font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 12px;" data-translate="specialTitle1">FİTNESS ÖZEL DERS</h3>
+                    <p style="font-size: 11px; color: #ffffff; text-align: center; margin-bottom: 15px; line-height: 1.5;">
+                        <span data-translate="specialFeature1">• ALANINDA UZMAN EĞİTMENLER EŞLİĞİNDE BİREBİR DERS İMKANI...</span><br>
+                        <span data-translate="specialFeature2">• HEDEFİNİZE GÖRE PLANLANAN PROGRAMLAR...</span><br>
+                        <span data-translate="specialFeature3">• SALON İÇERİSİNDE Kİ DİĞER TÜM İMKANLARI KULLANMA HAKKI...</span>
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; border: 2px solid rgba(255, 140, 0, 0.3); text-align: center;">
+                            <p style="font-size: 11px; color: #ffffff; margin-bottom: 8px;" data-translate="specialDuration1">1 AY - 12 DERS</p>
+                            <p style="font-size: 22px; font-weight: 900; color: #FF8C00;">10.000 TL</p>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; border: 2px solid rgba(255, 140, 0, 0.3); text-align: center;">
+                            <p style="font-size: 11px; color: #ffffff; margin-bottom: 8px;" data-translate="specialDuration2">1 AY - 8 DERS</p>
+                            <p style="font-size: 22px; font-weight: 900; color: #FF8C00;">8.000 TL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reformer Pilates -->
+                <div style="background: linear-gradient(145deg, #2a1a0a 0%, #3a2a1a 100%); border: 2px solid rgba(255, 140, 0, 0.4); border-radius: 15px; padding: 20px; margin-top: 15px;">
+                    <h3 style="color: #FF8C00; font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 12px;" data-translate="specialTitle2">REFORMER PİLATES ÖZEL DERS</h3>
+                    <p style="font-size: 11px; color: #ffffff; text-align: center; margin-bottom: 15px; line-height: 1.5;">
+                        <span data-translate="specialFeature1">• ALANINDA UZMAN EĞİTMENLER EŞLİĞİNDE BİREBİR DERS İMKANI...</span><br>
+                        <span data-translate="specialFeature2">• HEDEFİNİZE GÖRE PLANLANAN PROGRAMLAR...</span><br>
+                        <span data-translate="specialFeature3">• SALON İÇERİSİNDE Kİ DİĞER TÜM İMKANLARI KULLANMA HAKKI...</span>
+                    </p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; border: 2px solid rgba(255, 140, 0, 0.3); text-align: center;">
+                            <p style="font-size: 11px; color: #ffffff; margin-bottom: 8px;" data-translate="specialDuration1">1 AY - 12 DERS</p>
+                            <p style="font-size: 22px; font-weight: 900; color: #FF8C00;">10.000 TL</p>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; border: 2px solid rgba(255, 140, 0, 0.3); text-align: center;">
+                            <p style="font-size: 11px; color: #ffffff; margin-bottom: 8px;" data-translate="specialDuration2">1 AY - 8 DERS</p>
+                            <p style="font-size: 22px; font-weight: 900; color: #FF8C00;">8.000 TL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zumba -->
+                <div style="background: linear-gradient(145deg, #1a0a2a 0%, #2a1a3a 100%); border: 2px solid rgba(188, 24, 136, 0.4); border-radius: 15px; padding: 20px; margin-top: 15px; margin-bottom: 30px;">
+                    <h3 style="color: #bc1888; font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 12px;" data-translate="specialTitle3">ZUMBA GRUP DERS</h3>
+                    <p style="font-size: 11px; color: #ffffff; text-align: center; margin-bottom: 15px; line-height: 1.5;">
+                        <span data-translate="specialFeature4">• ALANINDA UZMAN EĞİTMEN TARAFINDAN GRUP DERSLERİNDE HEM HEDEF ODAKLI, YÖNELİK HEM EĞLENCELİ GRUP DERSLERİ...</span>
+                    </p>
+                    <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px; border: 2px solid rgba(188, 24, 136, 0.3); text-align: center; margin-top: 15px;">
+                        <p style="font-size: 11px; color: #ffffff; margin-bottom: 8px;" data-translate="specialDuration2">1 AY - 8 DERS</p>
+                        <p style="font-size: 28px; font-weight: 900; color: #bc1888;">2.500 TL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== ÜYELİK PAKETLERİ SAYFASI ========== -->
+        <div id="membershipPage" class="page">
+            <div class="logo-section">
+                <!-- Dil Seçici - FITX Yanında -->
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="changeLang('tr')" data-lang="tr">TR</button>
+                    <button class="lang-btn" onclick="changeLang('en')" data-lang="en">EN</button>
+                    <button class="lang-btn" onclick="changeLang('ar')" data-lang="ar">AR</button>
+                </div>
+                
+                <h1><span class="fit">FIT</span><span class="x">X</span></h1>
+                <p id="membershipPageTitle">Üyelik Paketlerimiz</p>
+            </div>
+
+            <div class="membership-package">
+                <div class="package-header">
+                    <h2 data-translate="monthlyPackage1">1 AYLIK ÜYELİK</h2>
+                </div>
+                <div class="package-content">
+                    <div class="package-item positive">✓ ÜCRETSİZ SPİNNİNG DERSLERİ</div>
+                    <div class="package-item positive">✓ ÜCRETSİZ MAT PİLATES DERSLERİ</div>
+                    <div class="package-item positive">✓ ÜCRETSİZ CRUNCH DERSLERİ</div>
+                    <div class="package-item negative">✗ DONDURMA HAKKI YOKTUR</div>
+                    <div class="package-item positive">✓ SINIRSIZ ANTRENMAN SAATİ</div>
+                    <div class="package-item positive">✓ ALANINDA UZMAN EĞİTMENLER</div>
+                    <div class="package-item positive">✓ PROFESYONEL EKİPMANLAR</div>
+                    <div class="package-item positive">✓ KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP</div>
+                    <div class="package-item positive">✓ ÖZEL GİYİNME KABİNLERİ</div>
+                    <div class="package-item positive">✓ TEMİZ VE HİJYENİK ORTAM</div>
+                    <div class="package-item positive">✓ ÜCRETSİZ Wi-Fi İMKANI</div>
+                    <div class="package-item positive">✓ ÇEŞİTLİ KARDİYO MAKİNELERİ</div>
+                    <div class="package-item negative">✗ İADE VE DEVİR YAPILMAMAKTADIR</div>
+                </div>
+                <div class="package-price">
+                    <div class="price-amount">3.500 TL</div>
+                    <div class="price-note">Seçkin Bir Topluluğun Giriş Bileti...</div>
+                </div>
             </div>
         </div>
     </div>
@@ -785,17 +1333,409 @@
             showPage('wifiPage');
         }
         
+        function openMembershipPage() {
+            showPage('membershipPage');
+        }
+        
         // Dil yönetimi
         let currentLang = 'tr';
         
+        const translations = {
+            tr: {
+                // Ana Menü
+                subtitle: 'Hoş Geldiniz',
+                menuFeedback: 'Geri Bildirim Formu',
+                menuFeedbackDesc: 'Şikayet ve önerilerinizi iletin',
+                menuWifi: 'WiFi Şifresi',
+                menuWifiDesc: 'İnternet erişim bilgileri',
+                menuMembership: 'Üyelik Paketlerimiz',
+                menuMembershipDesc: 'Tüm paketleri görüntüleyin',
+                menuInstagram: 'Instagram',
+                menuInstagramDesc: 'Bizi sosyal medyada takip edin',
+                backBtn: '← Geri',
+                // Geri Bildirim Formu
+                feedbackTitle: 'Geri Bildirim Formu',
+                labelType: 'Mesaj Türü',
+                labelComplaint: 'Şikayet',
+                labelSuggestion: 'Öneri',
+                labelName: 'Adınız Soyadınız',
+                labelPhone: 'Telefon Numaranız',
+                labelCategory: 'Kategori',
+                labelMessage: 'Mesajınız',
+                selectCategory: 'Seçiniz...',
+                optCat1: 'Ekipman Kalitesi',
+                optCat2: 'Temizlik ve Hijyen',
+                optCat3: 'Personel Hizmeti',
+                optCat4: 'Soyunma Odaları',
+                optCat5: 'Grup Dersleri',
+                optCat6: 'Kişisel Antrenman',
+                optCat7: 'Üyelik İşlemleri',
+                optCat8: 'Fiyatlandırma',
+                optCat9: 'Diğer',
+                submitBtn: 'GÖNDER',
+                loadingText: 'Gönderiliyor...',
+                successTitle: 'Teşekkür Ederiz!',
+                successMsg: 'Mesajınız başarıyla iletildi.',
+                errorMsg: '✗ Bir hata oluştu. Lütfen tekrar deneyin.',
+                // WiFi Sayfası
+                wifiTitle: 'WiFi Şifre Talebi',
+                wifiNameLabel: 'Adınız Soyadınız',
+                wifiPhoneLabel: 'Telefon Numaranız',
+                wifiSubmitBtn: 'ŞİFREYİ GÖSTER',
+                wifiLoadingText: 'İşleniyor...',
+                wifiPasswordTitle: '📶 WIFI ŞİFRESİ',
+                wifiNote: '"TÜM KARAKTERLER BÜYÜK YAZILACAKTIR"',
+                wifiErrorMsg: '✗ Bir hata oluştu. Lütfen tekrar deneyin.',
+                // Üyelik Paketleri
+                membershipPageTitle: 'Üyelik Paketlerimiz',
+                monthlyPackage1: '1 AYLIK ÜYELİK',
+                monthlyPackage3: '3 AYLIK ÜYELİK',
+                monthlyPackage6: '6 AYLIK ÜYELİK',
+                monthlyPackage12: '1 YILLIK ÜYELİK',
+                ourOfferings: 'SUNDUKLARIMIZ:',
+                feature1: 'ÜCRETSİZ SPİNNİNG DERSLERİ...',
+                feature2: 'ÜCRETSİZ MAT PİLATES DERSLERİ...',
+                feature3: 'ÜCRETSİZ CRUNCH DERSLERİ...',
+                feature4: 'DONDURMA HAKKI YOKTUR...',
+                feature4_3m: '15 GÜN DONDURMA HAKKI...',
+                feature4_6m: '30 GÜN DONDURMA HAKKI...',
+                feature4_12m: 'DONDURMA HAKKI YOKTUR...',
+                feature5: 'SINIRSIZ ANTRENMAN SAATİ...',
+                feature6: 'ALANINDA UZMAN EĞİTMENLER...',
+                feature7: 'PROFESYONEL EKİPMANLAR...',
+                feature8: 'KİŞİSEL EŞYALAR İÇİN ŞİFRELİ DOLAP...',
+                feature9: 'ÖZEL GİYİNME KABİNLERİ...',
+                feature10: 'TEMİZ VE HİJYENİK ORTAM...',
+                feature11: 'ÜCRETSİZ Wi-Fi İMKANI...',
+                feature12: 'ÇEŞİTLİ KARDİYO MAKİNELERİ...',
+                feature13: 'İADE VE DEVİR YAPILMAMAKTADIR...',
+                feature13_1m: 'İADE VE DEVİR YAPILMAMAKTADIR...',
+                feature13_3m: 'İADE VE DEVİR YAPILMAMAKTADIR...',
+                feature13_6m: '1 DEFA DEVİR HAKKI VARDIR...',
+                feature13_12m: '1 DEFA DEVİR HAKKI VARDIR...',
+                feature_extra6m: '15 GÜN EXTRA ÜYELİK...',
+                feature_extra12m: '30 GÜN EXTRA ÜYELİK...',
+                priceNote: '*SEÇKİN BİR TOPLULUĞUN GİRİŞ BİLETİ...',
+                specialTitle1: 'FİTNESS ÖZEL DERS',
+                specialTitle2: 'REFORMER PİLATES ÖZEL DERS',
+                specialTitle3: 'ZUMBA GRUP DERS',
+                specialFeature1: '• ALANINDA UZMAN EĞİTMENLER EŞLİĞİNDE BİREBİR DERS İMKANI...',
+                specialFeature2: '• HEDEFİNİZE GÖRE PLANLANAN PROGRAMLAR...',
+                specialFeature3: '• SALON İÇERİSİNDE Kİ DİĞER TÜM İMKANLARI KULLANMA HAKKI...',
+                specialFeature4: '• ALANINDA UZMAN EĞİTMEN TARAFINDAN GRUP DERSLERİNDE HEM HEDEF ODAKLI, YÖNELİK HEM EĞLENCELİ GRUP DERSLERİ...',
+                specialDuration1: '1 AY - 12 DERS',
+                specialDuration2: '1 AY - 8 DERS',
+                infoNote: '<span data-translate="infoNote">NOT: ÜYELİK İŞLEMLERİNDE İŞ BANKASI VE ZİRAAT BANKASI KREDİ KARTLARINA 6 TAKSİTE KADAR TAKSİT İMKANIMIZ MEVCUTTUR...</span>'
+            },
+            en: {
+                // Main Menu
+                subtitle: 'Welcome',
+                menuFeedback: 'Feedback Form',
+                menuFeedbackDesc: 'Send your complaints and suggestions',
+                menuWifi: 'WiFi Password',
+                menuWifiDesc: 'Internet access information',
+                menuMembership: 'Membership Packages',
+                menuMembershipDesc: 'View all packages',
+                menuInstagram: 'Instagram',
+                menuInstagramDesc: 'Follow us on social media',
+                backBtn: '← Back',
+                // Feedback Form
+                feedbackTitle: 'Feedback Form',
+                labelType: 'Message Type',
+                labelComplaint: 'Complaint',
+                labelSuggestion: 'Suggestion',
+                labelName: 'Your Full Name',
+                labelPhone: 'Your Phone Number',
+                labelCategory: 'Category',
+                labelMessage: 'Your Message',
+                selectCategory: 'Select...',
+                optCat1: 'Equipment Quality',
+                optCat2: 'Cleanliness & Hygiene',
+                optCat3: 'Staff Service',
+                optCat4: 'Locker Rooms',
+                optCat5: 'Group Classes',
+                optCat6: 'Personal Training',
+                optCat7: 'Membership',
+                optCat8: 'Pricing',
+                optCat9: 'Other',
+                submitBtn: 'SUBMIT',
+                loadingText: 'Sending...',
+                successTitle: 'Thank You!',
+                successMsg: 'Your message has been successfully sent.',
+                errorMsg: '✗ An error occurred. Please try again.',
+                // WiFi Page
+                wifiTitle: 'WiFi Password Request',
+                wifiNameLabel: 'Your Full Name',
+                wifiPhoneLabel: 'Your Phone Number',
+                wifiSubmitBtn: 'SHOW PASSWORD',
+                wifiLoadingText: 'Processing...',
+                wifiPasswordTitle: '📶 WIFI PASSWORD',
+                wifiNote: '"ALL CHARACTERS MUST BE UPPERCASE"',
+                wifiErrorMsg: '✗ An error occurred. Please try again.',
+                // Membership Packages
+                membershipPageTitle: 'Our Membership Packages',
+                monthlyPackage1: '1 MONTH MEMBERSHIP',
+                monthlyPackage3: '3 MONTH MEMBERSHIP',
+                monthlyPackage6: '6 MONTH MEMBERSHIP',
+                monthlyPackage12: '1 YEAR MEMBERSHIP',
+                ourOfferings: 'OUR OFFERINGS:',
+                feature1: 'FREE SPINNING CLASSES...',
+                feature2: 'FREE MAT PILATES CLASSES...',
+                feature3: 'FREE CRUNCH CLASSES...',
+                feature4: 'NO FREEZE RIGHT...',
+                feature4_3m: '15 DAYS FREEZE RIGHT...',
+                feature4_6m: '30 DAYS FREEZE RIGHT...',
+                feature4_12m: 'NO FREEZE RIGHT...',
+                feature5: 'UNLIMITED TRAINING HOURS...',
+                feature6: 'EXPERT TRAINERS...',
+                feature7: 'PROFESSIONAL EQUIPMENT...',
+                feature8: 'SECURE LOCKERS FOR PERSONAL ITEMS...',
+                feature9: 'PRIVATE CHANGING ROOMS...',
+                feature10: 'CLEAN AND HYGIENIC ENVIRONMENT...',
+                feature11: 'FREE Wi-Fi ACCESS...',
+                feature12: 'VARIOUS CARDIO MACHINES...',
+                feature13: 'NO REFUND OR TRANSFER...',
+                feature13_1m: 'NO REFUND OR TRANSFER...',
+                feature13_3m: 'NO REFUND OR TRANSFER...',
+                feature13_6m: '1 TIME TRANSFER RIGHT...',
+                feature13_12m: '1 TIME TRANSFER RIGHT...',
+                feature_extra6m: '15 DAYS EXTRA MEMBERSHIP...',
+                feature_extra12m: '30 DAYS EXTRA MEMBERSHIP...',
+                priceNote: '*ENTRY TICKET TO A SELECT COMMUNITY...',
+                specialTitle1: 'FITNESS PRIVATE LESSON',
+                specialTitle2: 'REFORMER PILATES PRIVATE LESSON',
+                specialTitle3: 'ZUMBA GROUP CLASS',
+                specialFeature1: '• ONE-ON-ONE TRAINING WITH EXPERT TRAINERS...',
+                specialFeature2: '• PROGRAMS PLANNED ACCORDING TO YOUR GOALS...',
+                specialFeature3: '• ACCESS TO ALL SALON FACILITIES...',
+                specialFeature4: '• TARGET-ORIENTED AND FUN GROUP CLASSES WITH EXPERT TRAINERS...',
+                specialDuration1: '1 MONTH - 12 SESSIONS',
+                specialDuration2: '1 MONTH - 8 SESSIONS',
+                infoNote: 'NOTE: FOR MEMBERSHIP TRANSACTIONS, WE OFFER UP TO 6 INSTALLMENTS FOR İŞ BANKASI AND ZİRAAT BANKASI CREDIT CARDS...'
+            },
+            ar: {
+                // القائمة الرئيسية
+                subtitle: 'مرحباً بك',
+                menuFeedback: 'نموذج التعليقات',
+                menuFeedbackDesc: 'أرسل شكواك واقتراحاتك',
+                menuWifi: 'كلمة مرور WiFi',
+                menuWifiDesc: 'معلومات الوصول إلى الإنترنت',
+                menuMembership: 'باقات العضوية',
+                menuMembershipDesc: 'عرض جميع الباقات',
+                menuInstagram: 'Instagram',
+                menuInstagramDesc: 'تابعنا على وسائل التواصل',
+                backBtn: 'رجوع ←',
+                // نموذج التعليقات
+                feedbackTitle: 'نموذج التعليقات',
+                labelType: 'نوع الرسالة',
+                labelComplaint: 'شكوى',
+                labelSuggestion: 'اقتراح',
+                labelName: 'اسمك الكامل',
+                labelPhone: 'رقم هاتفك',
+                labelCategory: 'الفئة',
+                labelMessage: 'رسالتك',
+                selectCategory: 'اختر...',
+                optCat1: 'جودة المعدات',
+                optCat2: 'النظافة والصحة',
+                optCat3: 'خدمة الموظفين',
+                optCat4: 'غرف تبديل الملابس',
+                optCat5: 'دروس جماعية',
+                optCat6: 'تدريب شخصي',
+                optCat7: 'العضوية',
+                optCat8: 'التسعير',
+                optCat9: 'أخرى',
+                submitBtn: 'إرسال',
+                loadingText: 'جاري الإرسال...',
+                successTitle: 'شكراً لك!',
+                successMsg: 'تم إرسال رسالتك بنجاح.',
+                errorMsg: '✗ حدث خطأ. يرجى المحاولة مرة أخرى.',
+                // صفحة WiFi
+                wifiTitle: 'طلب كلمة مرور WiFi',
+                wifiNameLabel: 'اسمك الكامل',
+                wifiPhoneLabel: 'رقم هاتفك',
+                wifiSubmitBtn: 'إظهار كلمة المرور',
+                wifiLoadingText: 'جاري المعالجة...',
+                wifiPasswordTitle: '📶 كلمة مرور WIFI',
+                wifiNote: '"يجب كتابة جميع الأحرف بالأحرف الكبيرة"',
+                wifiErrorMsg: '✗ حدث خطأ. يرجى المحاولة مرة أخرى.',
+                // باقات العضوية
+                membershipPageTitle: 'باقات العضوية',
+                monthlyPackage1: 'عضوية شهر واحد',
+                monthlyPackage3: 'عضوية 3 أشهر',
+                monthlyPackage6: 'عضوية 6 أشهر',
+                monthlyPackage12: 'عضوية سنة واحدة',
+                ourOfferings: 'ما نقدمه:',
+                feature1: 'دروس سبينينغ مجانية...',
+                feature2: 'دروس بيلاتس مجانية...',
+                feature3: 'دروس كرانش مجانية...',
+                feature4: 'لا يوجد حق تجميد...',
+                feature4_3m: 'حق تجميد 15 يوم...',
+                feature4_6m: 'حق تجميد 30 يوم...',
+                feature4_12m: 'لا يوجد حق تجميد...',
+                feature5: 'ساعات تدريب غير محدودة...',
+                feature6: 'مدربون خبراء...',
+                feature7: 'معدات احترافية...',
+                feature8: 'خزائن آمنة للأغراض الشخصية...',
+                feature9: 'غرف تغيير ملابس خاصة...',
+                feature10: 'بيئة نظيفة وصحية...',
+                feature11: 'خدمة واي فاي مجانية...',
+                feature12: 'أجهزة كارديو متنوعة...',
+                feature13: 'لا يوجد استرداد أو تحويل...',
+                feature13_1m: 'لا يوجد استرداد أو تحويل...',
+                feature13_3m: 'لا يوجد استرداد أو تحويل...',
+                feature13_6m: 'حق تحويل مرة واحدة...',
+                feature13_12m: 'حق تحويل مرة واحدة...',
+                feature_extra6m: 'عضوية إضافية 15 يوم...',
+                feature_extra12m: 'عضوية إضافية 30 يوم...',
+                priceNote: '*تذكرة دخول إلى مجتمع مختار...',
+                specialTitle1: 'درس خاص للياقة البدنية',
+                specialTitle2: 'درس خاص ريفورمر بيلاتس',
+                specialTitle3: 'درس زومبا جماعي',
+                specialFeature1: '• تدريب فردي مع مدربين خبراء...',
+                specialFeature2: '• برامج مخططة وفقاً لأهدافك...',
+                specialFeature3: '• الوصول إلى جميع مرافق الصالة...',
+                specialFeature4: '• دروس جماعية موجهة نحو الهدف وممتعة مع مدربين خبراء...',
+                specialDuration1: 'شهر واحد - 12 جلسة',
+                specialDuration2: 'شهر واحد - 8 جلسات',
+                infoNote: 'ملاحظة: بالنسبة لمعاملات العضوية، نقدم ما يصل إلى 6 أقساط لبطاقات الائتمان من بنك İŞ وبنك ZİRAAT...'
+            }
+        };
+        
         function changeLang(lang) {
             currentLang = lang;
+            
+            // Dil butonlarını güncelle
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if (btn.dataset.lang === lang) {
                     btn.classList.add('active');
                 }
             });
+            
+            // Çevirileri uygula
+            const t = translations[lang];
+            
+            // Ana Menü
+            setText('subtitle', t.subtitle);
+            setText('menuFeedback', t.menuFeedback);
+            setText('menuFeedbackDesc', t.menuFeedbackDesc);
+            setText('menuWifi', t.menuWifi);
+            setText('menuWifiDesc', t.menuWifiDesc);
+            setText('menuMembership', t.menuMembership);
+            setText('menuMembershipDesc', t.menuMembershipDesc);
+            setText('menuInstagram', t.menuInstagram);
+            setText('menuInstagramDesc', t.menuInstagramDesc);
+            setText('backBtn', t.backBtn);
+            
+            // Geri Bildirim Formu
+            setHTML('feedbackPageTitle', t.feedbackTitle);
+            setHTML('feedbackLabelType', t.labelType + ' <span class="required">*</span>');
+            setText('feedbackComplaint', t.labelComplaint);
+            setText('feedbackSuggestion', t.labelSuggestion);
+            setHTML('feedbackLabelName', t.labelName + ' <span class="required">*</span>');
+            setHTML('feedbackLabelPhone', t.labelPhone + ' <span class="required">*</span>');
+            setHTML('feedbackLabelCategory', t.labelCategory + ' <span class="required">*</span>');
+            setHTML('feedbackLabelMessage', t.labelMessage + ' <span class="required">*</span>');
+            setText('feedbackSelectCategory', t.selectCategory);
+            setText('feedbackOptCat1', t.optCat1);
+            setText('feedbackOptCat2', t.optCat2);
+            setText('feedbackOptCat3', t.optCat3);
+            setText('feedbackOptCat4', t.optCat4);
+            setText('feedbackOptCat5', t.optCat5);
+            setText('feedbackOptCat6', t.optCat6);
+            setText('feedbackOptCat7', t.optCat7);
+            setText('feedbackOptCat8', t.optCat8);
+            setText('feedbackOptCat9', t.optCat9);
+            setText('feedbackSubmitBtn', t.submitBtn);
+            setText('feedbackLoadingText', t.loadingText);
+            setText('feedbackSuccessTitle', t.successTitle);
+            setText('feedbackSuccessMsg', t.successMsg);
+            setHTML('feedbackErrorMsg', t.errorMsg);
+            
+            // WiFi Sayfası
+            setHTML('wifiPageTitle', t.wifiTitle);
+            setHTML('wifiLabelName', t.wifiNameLabel + ' <span class="required">*</span>');
+            setHTML('wifiLabelPhone', t.wifiPhoneLabel + ' <span class="required">*</span>');
+            setText('wifiSubmitBtn', t.wifiSubmitBtn);
+            setText('wifiLoadingText', t.wifiLoadingText);
+            setHTML('wifiPasswordTitle', t.wifiPasswordTitle);
+            setText('wifiNoteText', t.wifiNote);
+            setHTML('wifiErrorText', t.wifiErrorMsg);
+            
+            // Üyelik Paketleri Sayfası
+            setHTML('membershipPageTitle', t.membershipPageTitle);
+            // Paket başlıkları
+            document.querySelectorAll('[data-translate="monthlyPackage1"]').forEach(el => setText(el, t.monthlyPackage1));
+            document.querySelectorAll('[data-translate="monthlyPackage3"]').forEach(el => setText(el, t.monthlyPackage3));
+            document.querySelectorAll('[data-translate="monthlyPackage6"]').forEach(el => setText(el, t.monthlyPackage6));
+            document.querySelectorAll('[data-translate="monthlyPackage12"]').forEach(el => setText(el, t.monthlyPackage12));
+            // Özellikler başlığı
+            document.querySelectorAll('[data-translate="ourOfferings"]').forEach(el => setText(el, t.ourOfferings));
+            // Ortak özellikler
+            document.querySelectorAll('[data-translate="feature1"]').forEach(el => setText(el, t.feature1));
+            document.querySelectorAll('[data-translate="feature2"]').forEach(el => setText(el, t.feature2));
+            document.querySelectorAll('[data-translate="feature3"]').forEach(el => setText(el, t.feature3));
+            document.querySelectorAll('[data-translate="feature5"]').forEach(el => setText(el, t.feature5));
+            document.querySelectorAll('[data-translate="feature6"]').forEach(el => setText(el, t.feature6));
+            document.querySelectorAll('[data-translate="feature7"]').forEach(el => setText(el, t.feature7));
+            document.querySelectorAll('[data-translate="feature8"]').forEach(el => setText(el, t.feature8));
+            document.querySelectorAll('[data-translate="feature9"]').forEach(el => setText(el, t.feature9));
+            document.querySelectorAll('[data-translate="feature10"]').forEach(el => setText(el, t.feature10));
+            document.querySelectorAll('[data-translate="feature11"]').forEach(el => setText(el, t.feature11));
+            document.querySelectorAll('[data-translate="feature12"]').forEach(el => setText(el, t.feature12));
+            // Farklı özellikler (pakete göre)
+            document.querySelectorAll('[data-translate="feature4_1m"]').forEach(el => setText(el, t.feature4));
+            document.querySelectorAll('[data-translate="feature4_3m"]').forEach(el => setText(el, t.feature4_3m));
+            document.querySelectorAll('[data-translate="feature4_6m"]').forEach(el => setText(el, t.feature4_6m));
+            document.querySelectorAll('[data-translate="feature4_12m"]').forEach(el => setText(el, t.feature4_12m));
+            document.querySelectorAll('[data-translate="feature13_1m"]').forEach(el => setText(el, t.feature13_1m));
+            document.querySelectorAll('[data-translate="feature13_3m"]').forEach(el => setText(el, t.feature13_3m));
+            document.querySelectorAll('[data-translate="feature13_6m"]').forEach(el => setText(el, t.feature13_6m));
+            document.querySelectorAll('[data-translate="feature13_12m"]').forEach(el => setText(el, t.feature13_12m));
+            document.querySelectorAll('[data-translate="feature_extra6m"]').forEach(el => setText(el, t.feature_extra6m));
+            document.querySelectorAll('[data-translate="feature_extra12m"]').forEach(el => setText(el, t.feature_extra12m));
+            // Fiyat notu
+            document.querySelectorAll('[data-translate="priceNote"]').forEach(el => setText(el, t.priceNote));
+            // Özel dersler
+            document.querySelectorAll('[data-translate="specialTitle1"]').forEach(el => setText(el, t.specialTitle1));
+            document.querySelectorAll('[data-translate="specialTitle2"]').forEach(el => setText(el, t.specialTitle2));
+            document.querySelectorAll('[data-translate="specialTitle3"]').forEach(el => setText(el, t.specialTitle3));
+            document.querySelectorAll('[data-translate="specialFeature1"]').forEach(el => setHTML(el, t.specialFeature1));
+            document.querySelectorAll('[data-translate="specialFeature2"]').forEach(el => setHTML(el, t.specialFeature2));
+            document.querySelectorAll('[data-translate="specialFeature3"]').forEach(el => setHTML(el, t.specialFeature3));
+            document.querySelectorAll('[data-translate="specialFeature4"]').forEach(el => setText(el, t.specialFeature4));
+            document.querySelectorAll('[data-translate="specialDuration1"]').forEach(el => setText(el, t.specialDuration1));
+            document.querySelectorAll('[data-translate="specialDuration2"]').forEach(el => setText(el, t.specialDuration2));
+            document.querySelectorAll('[data-translate="infoNote"]').forEach(el => setText(el, t.infoNote));
+            
+            // RTL düzenlemesi
+            if (lang === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.querySelectorAll('.lang-selector').forEach(sel => {
+                    sel.style.right = 'auto';
+                    sel.style.left = '0';
+                });
+                document.querySelector('.back-btn').style.left = 'auto';
+                document.querySelector('.back-btn').style.right = '15px';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.querySelectorAll('.lang-selector').forEach(sel => {
+                    sel.style.right = '0';
+                    sel.style.left = 'auto';
+                });
+                document.querySelector('.back-btn').style.left = '15px';
+                document.querySelector('.back-btn').style.right = 'auto';
+            }
+        }
+        
+        function setText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.textContent = text;
+        }
+        
+        function setHTML(id, html) {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = html;
         }
         
         // Form yönetimi
